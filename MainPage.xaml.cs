@@ -25,6 +25,8 @@ namespace prjHambugerMenu
         public MainPage()
         {
             this.InitializeComponent();
+            ContentFrame.Navigate(typeof(Portada));
+            PortadaRadio.IsChecked = true;
         }
 
         private void btnMenu_Click(object sender, RoutedEventArgs e)
@@ -37,6 +39,36 @@ namespace prjHambugerMenu
             {
                 Menu.IsPaneOpen = true;
             }
+
+            btnMenu.IsChecked = false;
+        }
+
+        private void PortadaRadio_Click(object sender, RoutedEventArgs e)
+        {
+            ContentFrame.Navigate(typeof(Portada));
+            PortadaRadio.IsChecked = true;
+        }
+
+        private void Page1Radio_Click(object sender, RoutedEventArgs e)
+        {
+            ContentFrame.Navigate(typeof(Pagina1));
+            Page1Radio.IsChecked = true;
+        }
+
+        private void Page2Radio_Click(object sender, RoutedEventArgs e)
+        {
+            ContentFrame.Navigate(typeof(Pagina2));
+            Page2Radio.IsChecked = true;
+        }
+
+        private void BackRadio_Click(object sender, RoutedEventArgs e)
+        {
+            if(ContentFrame.CanGoBack)
+            {
+                ContentFrame.GoBack();
+            }
+
+            BackRadio.IsChecked = false;
         }
     }
 }
